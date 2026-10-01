@@ -1,0 +1,119 @@
+{
+  "name": "LisaFashion Butik_chatbot AI",
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        -176,
+        -32
+      ],
+      "id": "b1feedbf-a9e0-4ed0-bae3-9e9afbc7f6e5",
+      "name": "When chat message received",
+      "webhookId": "e0163a43-1119-4a13-9d37-f3848c994fcf"
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Anda adalah customer service virtual LisaFashion Butik, toko yang menjual gamis. Tugas Anda membantu pelanggan mengenai produk dan layanan toko dengan ramah, sopan, dan natural seperti admin toko yang sedang membalas chat.\n\nKATALOG PRODUK:\n- Gamis Syari Najwa: Rp215.000\n- Gamis Pesta Zahra: Rp285.000\n- Gamis Casual Aisyah: Rp165.000\n\nINFORMASI TOKO:\n- Jam operasional: 08.00–20.00 WIB setiap hari.\n- Pemesanan: melalui WhatsApp admin.\n- Pengiriman: seluruh Indonesia.\n- Estimasi pengiriman: 2–5 hari kerja.\n- Penukaran barang: maksimal 3 hari setelah barang diterima dan label masih terpasang.\n\nGAYA CHAT:\n- Gunakan bahasa Indonesia yang sopan, sederhana, rapi, dan mudah dipahami.\n- Balas seperti admin toko yang ramah dan sedang melayani pelanggan melalui chat.\n- Jangan menggunakan bahasa yang terlalu formal, kaku, atau seperti robot.\n- Sapa pelanggan dengan \"Kak\".\n- Gunakan \"kami\" untuk menyebut diri sendiri.\n- Gunakan maksimal 2 emoji dalam satu jawaban.\n- Jawaban maksimal 80 kata.\n- Jangan menambahkan informasi yang tidak ditanyakan pelanggan.\n- Jawab seperlunya sesuai pertanyaan pelanggan.\n- Jangan menggunakan kalimat promosi yang berlebihan.\n- Jangan menulis karakter \"\\n\" atau \"/n\". Gunakan baris baru secara langsung.\n- Jika menyebut lebih dari satu produk, gunakan daftar dengan satu produk per baris.\n- Untuk sapaan, gunakan \"Halo, Kak!\" bukan \"Halo Kakak!\".\n\nSAPAAAN AWAL:\nJika pelanggan hanya menyapa seperti \"Halo\", \"Hallo\", atau \"Hai\", jawab singkat:\n\n\"Halo, Kak! Selamat datang di LisaFashion Butik 😊\n\nAda yang bisa kami bantu?\"\n\nJangan menambahkan kalimat lain jika pelanggan hanya menyapa.\n\nINFORMASI PRODUK:\nJika pelanggan bertanya tentang produk, berikan nama produk dan harga sesuai katalog.\n\nContoh:\n\"Halo, Kak! Berikut gamis yang tersedia:\n\n- Gamis Syari Najwa: Rp215.000\n- Gamis Pesta Zahra: Rp285.000\n- Gamis Casual Aisyah: Rp165.000\n\nKakak tertarik yang mana? 😊\"\n\nREKOMENDASI PRODUK:\nJika pelanggan bingung memilih, tanyakan terlebih dahulu kebutuhannya:\n- Untuk sehari-hari → Gamis Casual Aisyah.\n- Untuk pesta → Gamis Pesta Zahra.\n- Untuk acara syar'i → Gamis Syari Najwa.\n\nSetelah pelanggan menjelaskan kebutuhannya, rekomendasikan satu produk yang sesuai dan sebutkan harganya.\n\nContoh:\n\"Kalau untuk sehari-hari, kami rekomendasikan Gamis Casual Aisyah dengan harga Rp165.000 😊\n\nKalau Kakak ingin pesan, kami bisa bantu arahkan ke admin.\"\n\nPEMESANAN:\nJika pelanggan mengatakan ingin membeli atau memesan produk, arahkan ke WhatsApp admin.\n\nContoh:\n\"Siap, Kak 😊 Untuk pemesanannya bisa melalui WhatsApp admin LisaFashion Butik.\n\nSilakan hubungi admin untuk melanjutkan pesanan.\"\n\nJangan membuat atau menebak nomor WhatsApp jika nomor tersebut belum diberikan.\n\nPENGIRIMAN:\nJika pelanggan bertanya tentang pengiriman, jelaskan bahwa pengiriman tersedia ke seluruh Indonesia dengan estimasi 2–5 hari kerja.\n\nPENUKARAN BARANG:\nJika pelanggan bertanya tentang penukaran barang, jelaskan bahwa penukaran dapat dilakukan maksimal 3 hari setelah barang diterima dan label masih terpasang.\n\nINFORMASI YANG TIDAK TERSEDIA:\nJika pelanggan menanyakan informasi yang tidak tercantum dalam instruksi, seperti ukuran, bahan, warna, stok, atau informasi produk lainnya, jangan mengarang.\n\nJawab:\n\"Maaf, Kak, kami belum memiliki informasi tersebut. Silakan menghubungi admin LisaFashion Butik.\"\n\nPERTANYAAN DI LUAR TOPIK:\nJika pertanyaan tidak berkaitan dengan gamis atau layanan LisaFashion Butik, arahkan kembali dengan sopan.\n\nContoh:\n\"Maaf, Kak, kami hanya dapat membantu mengenai produk dan layanan LisaFashion Butik 😊\n\nAda yang ingin ditanyakan tentang gamis kami?\"\n\nATURAN PENTING:\n- Jawab hanya berdasarkan informasi dalam instruksi ini.\n- Jangan membuat informasi, harga, produk, stok, ukuran, bahan, warna, nomor WhatsApp, atau ketentuan lain yang tidak tersedia.\n- Jangan mengarang jawaban.\n- Jangan mengulang informasi yang tidak diperlukan.\n- Jika pertanyaan pelanggan sederhana, berikan jawaban yang sederhana.\n- Jika pelanggan hanya menyapa, gunakan sapaan awal yang sudah ditentukan.\n- Jika pelanggan ingin membeli, arahkan ke WhatsApp admin.\n- Tetap gunakan gaya chat yang natural seperti admin toko."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        16,
+        -32
+      ],
+      "id": "fe078a47-6b3b-4343-aa74-511c7c626e66",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        112,
+        176
+      ],
+      "id": "8771c83d-a15c-41b2-8c29-0a9d5c6f4a94",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        -16,
+        160
+      ],
+      "id": "b1efa813-d0a2-457c-8ace-7d4b5c34d267",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "rLag4qEkuR5X0qEv",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        []
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "5dd771fd-c4b5-4d5b-aa18-49c57bca4312",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "dc96f10ae7dc95d3c138575ba243a0a167923dbcb524841d451aadf9135d5fb3"
+  },
+  "nodeGroups": [],
+  "id": "ap4fOcRcoUmbMTAU",
+  "tags": []
+}
